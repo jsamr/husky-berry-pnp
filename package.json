@@ -8,11 +8,17 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "commitlint": "^12.1.4",
-    "husky": "^6.0.0"
+    "husky": "^6.0.0",
+    "pinst": "^2.0.0"
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   }
 }
